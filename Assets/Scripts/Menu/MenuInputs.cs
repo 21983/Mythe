@@ -4,26 +4,30 @@ using UnityEngine;
 
 public class MenuInputs : MonoBehaviour {
 
-    private bool _IsPaused = false;
     public Pause pause;
+    private bool _IsPaused;
 
     void Start()
     {
         pause = GetComponent<Pause>();
+        _IsPaused = GetComponent<Pause>().isPaused;
     }
 
     // Update is called once per frame
     void Update () {
-
+        _IsPaused = GetComponent<Pause>().isPaused;
         //pause
         if (Input.GetKeyDown(KeyCode.Escape) && !_IsPaused)
         {
-            _IsPaused = true;
             pause.OnPause();
         }else if(Input.GetKeyDown(KeyCode.Escape) && _IsPaused)
         {
-            _IsPaused = false;
             pause.Resume();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            pause.OnGameOver();
         }
 	}
 }
