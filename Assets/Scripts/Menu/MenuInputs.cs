@@ -7,6 +7,8 @@ public class MenuInputs : MonoBehaviour {
     public Pause pause;
     private bool _IsPaused;
 
+    [SerializeField] KeyCode pauseButton;
+
     void Start()
     {
         pause = GetComponent<Pause>();
@@ -17,10 +19,10 @@ public class MenuInputs : MonoBehaviour {
     void Update () {
         _IsPaused = GetComponent<Pause>().isPaused;
         //pause
-        if (Input.GetKeyDown(KeyCode.Escape) && !_IsPaused)
+        if (Input.GetKeyDown(pauseButton) && !_IsPaused)
         {
             pause.OnPause();
-        }else if(Input.GetKeyDown(KeyCode.Escape) && _IsPaused)
+        }else if(Input.GetKeyDown(pauseButton) && _IsPaused)
         {
             pause.Resume();
         }

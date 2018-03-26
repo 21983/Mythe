@@ -125,6 +125,8 @@ GameObject:
   - component: {fileID: 510108913}
   - component: {fileID: 510108914}
   - component: {fileID: 510108910}
+  - component: {fileID: 510108915}
+  - component: {fileID: 510108916}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player1
@@ -255,6 +257,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &510108915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510108909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9726ad877a46414c8ca4e7e17ffe918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pause: {fileID: 0}
+  pauseButton: 359
+--- !u!114 &510108916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510108909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6205b626069b044a95c369759e8be51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pauseUI: {fileID: 1770228892390542, guid: 82a7780c275866e498aab3f62715cfcf, type: 2}
+  _gameOverUI: {fileID: 1599764775370594, guid: 82a7780c275866e498aab3f62715cfcf,
+    type: 2}
+  isPaused: 0
+  isGameOver: 0
 --- !u!1 &689893463
 GameObject:
   m_ObjectHideFlags: 0
