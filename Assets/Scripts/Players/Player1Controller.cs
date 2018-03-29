@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Player1Controller : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
 
