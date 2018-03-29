@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Player4Controller : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpForce;
@@ -24,7 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, groundLayer);
 
-        float translation = Input.GetAxis("LeftJoystickX_P1") * moveSpeed;
+        float translation = Input.GetAxis("LeftJoystickX_P4") * moveSpeed;
         translation *= Time.deltaTime;
         transform.position += new Vector3(translation, 0, 0);
 
