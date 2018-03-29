@@ -6,35 +6,22 @@ public class PlayerAttack : MonoBehaviour {
 
     [SerializeField]
     private float thrust = 5;
+    private float distance;
+    [SerializeField]
+    private GameObject trigger;
     private bool isLeft;
 
     private bool isTriggered = false;
     private GameObject enemy;
-    // Use this for initialization
-    void Start() {
 
-    }
-
-    // Update is called once per frame
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.position = transform.parent.position - new Vector3(GetComponent<BoxCollider2D>().size.x/2 + 0.11f, 0, 0);
-            isLeft = true;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            transform.position = transform.parent.position + new Vector3(GetComponent<BoxCollider2D>().size.x / 2 + 0.11f, 0, 0);
-            isLeft = false;
-        }
-
-        Attack(KeyCode.Space);
-    }
     public void Attack(KeyCode Key)
     {
+        distance = Mathf.Abs(gameObject.transform.position.x - enemy.transform.position.x);
+        thrust = Mathf.Abs(2f-distance)*4;
+        Debug.Log("Distance: " + distance);
+        Debug.Log("Thrust: " + thrust);
         if (Input.GetKeyDown(Key) && isTriggered)
         {
-            Debug.Log("Slang");
             if (isLeft)
             {
                 enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(-transform.right * thrust, ForceMode2D.Impulse);
@@ -46,10 +33,23 @@ public class PlayerAttack : MonoBehaviour {
         }
     }
 
+    public void ChangeHitbox(string side)
+    {
+        if (side == "left")
+        {
+            trigger.transform.position = trigger.transform.parent.position - new Vector3(GetComponent<BoxCollider2D>().size.x / 10 + 0.11f, 0, 0);
+            isLeft = true;
+        }
+        else
+        {
+            trigger.transform.position = trigger.transform.parent.position + new Vector3(GetComponent<BoxCollider2D>().size.x / 10 + 0.11f, 0, 0);
+            isLeft = false;
+        }
+    }
+
 
     void OnTriggerStay2D(Collider2D col)
     {
-        Debug.Log("Moan");
            if (col.gameObject.tag == "Player")
            {
                 isTriggered = true;

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212125572580619330}
   - component: {fileID: 60523967123896388}
   - component: {fileID: 114003498708841054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MaagwandPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

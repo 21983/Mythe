@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212215993484603420}
   - component: {fileID: 60233026667312468}
   - component: {fileID: 114243698378204578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OctopusPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

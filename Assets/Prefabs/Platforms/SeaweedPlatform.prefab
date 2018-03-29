@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212429674125381478}
   - component: {fileID: 60532162781887086}
   - component: {fileID: 114823908206401032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SeaweedPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.4731706, y: 0.8939147}
     oldSize: {x: 2.74, y: 4.51}
     newSize: {x: 2.74, y: 4.51}
     adaptiveTilingThreshold: 0.5
