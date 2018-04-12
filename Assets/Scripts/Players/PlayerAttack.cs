@@ -18,8 +18,8 @@ public class PlayerAttack : MonoBehaviour {
     {
         distance = Mathf.Abs(gameObject.transform.position.x - enemy.transform.position.x);
         thrust = Mathf.Abs(2f-distance)*4;
-        Debug.Log("Distance: " + distance);
-        Debug.Log("Thrust: " + thrust);
+        //Debug.Log("Distance: " + distance);
+        //Debug.Log("Thrust: " + thrust);
         if (Input.GetKeyDown(Key) && isTriggered)
         {
             if (isLeft)
