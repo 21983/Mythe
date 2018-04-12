@@ -11,8 +11,8 @@ public class Player1Controller : MonoBehaviour
 
     private void Update()
     { 
-        //float translation = Input.GetAxis("LeftJoystickX_P1") * moveSpeed;
-        float translation = Input.GetAxis("Horizontal") * moveSpeed;
+        float translation = Input.GetAxis("LeftJoystickX_P1") * moveSpeed;
+        //float translation = Input.GetAxis("Horizontal") * moveSpeed;
         if(translation < 0)
         {
             gameObject.GetComponent<PlayerAttack>().ChangeHitbox("left");
