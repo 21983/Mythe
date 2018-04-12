@@ -17,10 +17,10 @@ public class SceneLoader : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void SetLevel1()
+    public void SetLevel()
     {
-        SceneManager.LoadScene("Level1");
-        Debug.Log("Level 1");
+        SceneManager.LoadScene("Level");
+        Debug.Log("Level");
     }
 
     public void SetCharSelect()
