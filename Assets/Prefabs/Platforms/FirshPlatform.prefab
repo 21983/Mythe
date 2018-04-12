@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212084986431425254}
   - component: {fileID: 60815700844188726}
   - component: {fileID: 114418603788043384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirshPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
