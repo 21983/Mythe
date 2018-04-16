@@ -5,6 +5,7 @@ using UnityEngine;
 public class MenuInputs : MonoBehaviour {
 
     public Pause pause;
+    
     private bool _IsPaused;
 
     [SerializeField] KeyCode pauseButton1;
