@@ -246,17 +246,12 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-<<<<<<< HEAD
     m_Name: Submit
-=======
-    m_Name: LeftJoystickX_P3
->>>>>>> 9695103f8b6f1fc3151b01da1aeb5ca5347e7259
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: return
     altNegativeButton: 
-<<<<<<< HEAD
     altPositiveButton: joystick button 0
     gravity: 1000
     dead: 0.001
@@ -268,35 +263,6 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Submit
-=======
-    altPositiveButton: 
-    gravity: 1
-    dead: 0.2
-    sensitivity: 1
-    snap: 0
-    invert: 0
-    type: 2
-    axis: 0
-    joyNum: 3
-  - serializedVersion: 3
-    m_Name: LeftJoystickX_P4
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1
-    dead: 0.2
-    sensitivity: 1
-    snap: 0
-    invert: 0
-    type: 2
-    axis: 0
-    joyNum: 4
-  - serializedVersion: 3
-    m_Name: RightTrigger_P1
->>>>>>> 9695103f8b6f1fc3151b01da1aeb5ca5347e7259
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -308,55 +274,11 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-<<<<<<< HEAD
     type: 0
     axis: 0
     joyNum: 0
   - serializedVersion: 3
     m_Name: Cancel
-=======
-    type: 2
-    axis: 5
-    joyNum: 1
-  - serializedVersion: 3
-    m_Name: RightTrigger_P2
->>>>>>> 9695103f8b6f1fc3151b01da1aeb5ca5347e7259
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: escape
-    altNegativeButton: 
-<<<<<<< HEAD
-    altPositiveButton: joystick button 1
-=======
-    altPositiveButton: 
->>>>>>> 9695103f8b6f1fc3151b01da1aeb5ca5347e7259
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 0
-    invert: 0
-    type: 2
-    axis: 5
-    joyNum: 2
-  - serializedVersion: 3
-    m_Name: LeftJoystickX_P1
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1
-    dead: 0.2
-    sensitivity: 1
-    snap: 0
-    invert: 0
-    type: 2
-    axis: 0
-    joyNum: 1
-  - serializedVersion: 3
-    m_Name: 
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

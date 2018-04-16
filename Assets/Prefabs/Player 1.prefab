@@ -129,13 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 5
   jump: 350
-  groundCheckPoint: {fileID: 4164155903625370}
-  groundCheckRadius: 1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  punch: 0
 --- !u!212 &212244203880552554
 SpriteRenderer:
   m_ObjectHideFlags: 1
