@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class Player1Controller : MonoBehaviour
 {
-    [SerializeField] private string Joystick;
-    [SerializeField] float moveSpeed;
+    [SerializeField]
+    private float translation;
+    [SerializeField]
+    private string _Joystick;
+    [SerializeField]
+    float moveSpeed;
     private PlayerAttack _playerAttack;
-    [SerializeField] KeyCode jump;
-    [SerializeField] KeyCode punch;
+    private PlayerJump _playerJump;
+    [SerializeField]
+    KeyCode jump;
+    [SerializeField]
+    KeyCode punch;
     public bool stunned;
+    Timer t;
     private void Start()
     {
         _playerAttack = GetComponent<PlayerAttack>();
+        _playerJump = GetComponent<PlayerJump>();
     }
 
     private void Update()
     {
         if (!stunned)
         {
-            float translation = Input.GetAxis(Joystick) * moveSpeed;
-            //float translation = Input.GetAxis("Horizontal") * moveSpeed;
+            //float translation = Input.GetAxis(_Joystick) * moveSpeed;
+            translation = Input.GetAxis("Horizontal") * moveSpeed;
             if (translation < 0)
             {
                 _playerAttack.ChangeHitbox("left");
@@ -33,8 +42,18 @@ public class Player1Controller : MonoBehaviour
             translation *= Time.deltaTime;
             transform.position += new Vector3(translation, 0, 0);
 
-            gameObject.GetComponent<PlayerJump>().Jump(jump);
+            _playerJump.Jump(jump);
             _playerAttack.Attack(punch);
         }
+        if (stunned)
+        {
+            if(t == null)
+                t = Timer.StartNew(gameObject, 1f, ChangeStun);
+        }
+    }
+    private void ChangeStun()
+    {
+        stunned = !stunned;
+        Destroy(t);
     }
 }

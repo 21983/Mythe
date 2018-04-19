@@ -10,21 +10,15 @@ public class TrapShoot : MonoBehaviour {
     private float _initialTimer = 3;
     private float _timer = 3;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
-        if(_timer <= 0)
+        _timer -= Time.deltaTime;
+
+        if (_timer <= 0)
         {
             Instantiate(bulletPrefab, transform.position, transform.rotation);
             _timer = _initialTimer;
         }
-        else
-        {
-            _timer -= Time.deltaTime;
-        }
+
 	}
 }
