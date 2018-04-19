@@ -22,13 +22,16 @@ public class CharacterViewer : MonoBehaviour {
     [SerializeField]
     private GameObject _character;
 
+    private SpriteRenderer _characterRenderer;
+
     private Sprite _characterSprite;
     
 
     // Use this for initialization
     void Start () {
-        _image.GetComponent<Image>();
-        _character.GetComponent<SpriteRenderer>().sprite = _characterSprite;
+        //_character.GetComponent<SpriteRenderer>().sprite = _characterSprite;
+        _characterRenderer = _character.GetComponent<SpriteRenderer>();
+        _characterRenderer.sprite = _characterSprite;
 
 
         _sprites = new Sprite[3];
@@ -42,7 +45,7 @@ public class CharacterViewer : MonoBehaviour {
 	void Update () {
         _image.sprite = _sprites[i];
         _characterSprite = _sprites[i];
-        _character.GetComponent<SpriteRenderer>().sprite = _characterSprite;
+        _characterRenderer.sprite = _characterSprite;
     }
 
     public void Next()
