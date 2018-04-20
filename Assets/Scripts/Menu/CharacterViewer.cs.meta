@@ -5,9 +5,14 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - _image: {instanceID: 0}
-  - _spr1: {fileID: 21300000, guid: 609f0a07b55409f4eb5f9c88a5bcbc3a, type: 3}
-  - _spr2: {fileID: 21300000, guid: ac83b714b22df914dbed398fdb75b512, type: 3}
-  - _spr3: {fileID: 21300000, guid: 05985ec3bb44c4e4f926cbfa3219de63, type: 3}
+  - _spr1: {fileID: 21300000, guid: 25abf46b3dd73a147ba31206ba47fef2, type: 3}
+  - _spr2: {fileID: 21300000, guid: 19edec8ca16f02a4d9778c9f027b1503, type: 3}
+  - _spr3: {fileID: 21300000, guid: b583a1eedf6310546a16025c09e8cafe, type: 3}
+  - _spr4: {fileID: 21300000, guid: ceb02554d30b0a54aa4960b2b893ba0b, type: 3}
+  - _clo1: {fileID: 21300000, guid: ed034656a8c37b440a9d452880f7d488, type: 3}
+  - _clo2: {fileID: 21300000, guid: f674457b1bcc79e478fe23b66c199cc7, type: 3}
+  - _clo3: {fileID: 21300000, guid: b30dbe9d661fff141ba52cd6dbd73aa4, type: 3}
+  - _clo4: {fileID: 21300000, guid: 6ca9b19b79e07274db318cba9dbca5fb, type: 3}
   - _character: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}

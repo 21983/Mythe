@@ -8,9 +8,18 @@ public class JoinGame : MonoBehaviour {
     private int currentPlayers = 0;
 
     private GameObject[] selectP;
+    private GameObject[] textJoin;
 
     void Start()
     {
+        textJoin = new GameObject[4];
+
+        textJoin[0] = GameObject.Find("P1");
+        textJoin[1] = GameObject.Find("PressJoin2");
+        textJoin[2] = GameObject.Find("PressJoin3");
+        textJoin[3] = GameObject.Find("PressJoin4");
+
+
         selectP = new GameObject[4];
 
         selectP[0] = GameObject.Find("P1");
@@ -37,6 +46,7 @@ public class JoinGame : MonoBehaviour {
         {           
             currentPlayers += 1;
             selectP[currentPlayers].SetActive(true);
+            textJoin[currentPlayers].SetActive(false);
         }
     }
 
@@ -52,12 +62,13 @@ public class JoinGame : MonoBehaviour {
         else
         {
             selectP[currentPlayers].SetActive(false);
+            textJoin[currentPlayers].SetActive(true);
             currentPlayers -= 1;
         }
     }
 
     void Update()
     {
-        Debug.Log(currentPlayers);
+        Debug.Log("CurrentPlayers: " + currentPlayers);
     }
 }
