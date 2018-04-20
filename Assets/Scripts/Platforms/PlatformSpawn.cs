@@ -18,7 +18,7 @@ public class PlatformSpawn : MonoBehaviour
     [SerializeField]
     private float height;
     [SerializeField]
-    private float recondite = 4;
+    private float recondite = 3.5f;
 
     private float _trapTimer;
     [SerializeField]
@@ -41,7 +41,7 @@ public class PlatformSpawn : MonoBehaviour
             {
                 height = d;
                 Vector2 _spawnPos = new Vector2(spawnPosX, transform.position.y + Random.Range(7.5f, 10f));
-                Vector2 _spawnPos2 = new Vector2(spawnPosX2, transform.position.y + Random.Range(7.5f, 10f));
+                Vector2 _spawnPos2 = new Vector2(spawnPosX2, transform.position.y + Random.Range(7.5f, 10));
                 Instantiate(_platforms[Random.Range(0, _platforms.Length)], _spawnPos, Quaternion.identity);
                 Instantiate(_platforms[Random.Range(0, _platforms.Length)], _spawnPos2, Quaternion.identity);
             }
