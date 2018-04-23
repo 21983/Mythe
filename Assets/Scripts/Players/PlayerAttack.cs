@@ -6,6 +6,9 @@ public class PlayerAttack : MonoBehaviour {
 
     [SerializeField]
     private float thrust = 5;
+    [SerializeField]
+    public float knockback = 4;
+    public float initialKnockback = 4;
     private float distance;
     [SerializeField]
     private GameObject trigger;
@@ -17,7 +20,7 @@ public class PlayerAttack : MonoBehaviour {
     public void Attack(KeyCode Key)
     {
         distance = Mathf.Abs(gameObject.transform.position.x - enemy.transform.position.x);
-        thrust = Mathf.Abs(2f-distance)*4;
+        thrust = Mathf.Abs(2f-distance)*knockback;
         //Debug.Log("Distance: " + distance);
         //Debug.Log("Thrust: " + thrust);
         if (Input.GetKeyDown(Key) && isTriggered)
@@ -54,7 +57,7 @@ public class PlayerAttack : MonoBehaviour {
            {
                 isTriggered = true;
                 enemy = col.gameObject;
-                Debug.Log(enemy);
+                //Debug.Log(enemy);
         }
     }
     void OnTriggerExit2D(Collider2D other)
