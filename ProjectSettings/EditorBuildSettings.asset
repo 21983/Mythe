@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level.unity
     guid: 40fd96fea72aa4edfb70f17bec223eb7
+  - enabled: 1
+    path: Assets/Scenes/Joppe.unity
+    guid: d608ba6112acb4542aebad7b0b57ce03
   m_configObjects: {}
