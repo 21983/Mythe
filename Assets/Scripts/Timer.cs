@@ -57,9 +57,10 @@ public class Timer : MonoBehaviour
         if (Running && time > 0)
         {
             time -= Time.deltaTime;
-
+            Debug.Log(time);
             if (time < 0)
             {
+                
                 if (!Repeat) Running = false;
                 IsDone = true;
                 time = baseTime;
@@ -69,3 +70,5 @@ public class Timer : MonoBehaviour
         }
     }
 }
+
+

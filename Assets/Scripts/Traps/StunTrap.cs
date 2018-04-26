@@ -14,7 +14,7 @@ public class StunTrap : MonoBehaviour
         {
             Debug.Log("Moan");
             stunnedGameobject = col.gameObject;
-            stunnedGameobject.GetComponent<Player1Controller>().stunned = true;
+            stunnedGameobject.GetComponent<PlayerController>().stunned = true;
             Destroy(gameObject);
         }
     }

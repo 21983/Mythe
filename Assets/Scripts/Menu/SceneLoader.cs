@@ -19,7 +19,7 @@ public class SceneLoader : MonoBehaviour {
 
     public void SetLevel()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Joppe");
         Debug.Log("Level");
     }
 

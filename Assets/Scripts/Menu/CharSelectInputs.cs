@@ -1,36 +1,63 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CharSelectInputs : MonoBehaviour
-{
-    //These 2 are from me, comment them out again when testing
-    //Original code has the X + Z keycodes
-    [SerializeField] KeyCode join;
-    [SerializeField] KeyCode leave;
+public class CharSelectInputs : MonoBehaviour {
 
     public JoinGame joinGame;
+    public CharacterViewer characterViewer;
 
-    // Use this for initialization
-    void Start()
-    {
-        joinGame = GetComponent<JoinGame>();
-    }
+    private GameObject _canvas;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.X))
-        if (Input.GetKeyDown(join))
+    private bool _joined = false;
+
+    [SerializeField] KeyCode LeftArrow;
+    [SerializeField] KeyCode RightArrow;
+    [SerializeField] KeyCode UpArrow;
+    [SerializeField] KeyCode DownArrow;
+
+    [SerializeField] KeyCode Join;
+    [SerializeField] KeyCode Leave;
+
+	// Use this for initialization
+	void Start () {
+        _canvas = GameObject.Find("Canvas");
+        joinGame = _canvas.GetComponent<JoinGame>();
+        characterViewer = GetComponent<CharacterViewer>();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+        // IFS
+        if (Input.GetKeyDown(Join) && !_joined)
         {
+            _joined = true;
             joinGame.OnJoin();
         }
 
-        //if (Input.GetKeyDown(KeyCode.Z))
-        if (Input.GetKeyDown(leave))
+        if (Input.GetKeyDown(Leave) && _joined)
         {
+            _joined = false;
             joinGame.OnLeave();
+        }
+
+        if (Input.GetKeyDown(UpArrow))
+        {
+            characterViewer.ChangeClothes();
+        }
+
+        if (Input.GetKeyDown(DownArrow))
+        {
+            characterViewer.ChangeClothes();
+        }
+
+        if (Input.GetKeyDown(LeftArrow))
+        {
+            characterViewer.Previous();
+        }
+
+        if (Input.GetKeyDown(RightArrow))
+        {
+            characterViewer.Next();
         }
     }
 }
-

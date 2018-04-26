@@ -17,13 +17,13 @@ public class PlayerAttack : MonoBehaviour {
     private bool isTriggered = false;
     private GameObject enemy;
 
-    public void Attack(KeyCode Key)
+    public void Attack(KeyCode punch)
     {
         distance = Mathf.Abs(gameObject.transform.position.x - enemy.transform.position.x);
         thrust = Mathf.Abs(2f-distance)*knockback;
         //Debug.Log("Distance: " + distance);
         //Debug.Log("Thrust: " + thrust);
-        if (Input.GetKeyDown(Key) && isTriggered)
+        if (Input.GetKeyDown(punch) && isTriggered)
         {
             if (isLeft)
             {

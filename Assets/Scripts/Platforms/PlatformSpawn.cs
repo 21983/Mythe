@@ -18,7 +18,7 @@ public class PlatformSpawn : MonoBehaviour
     [SerializeField]
     private float height;
     [SerializeField]
-    private float recondite = 4;
+    private float recondite = 3.5f;
 
     private float _trapTimer;
     [SerializeField]
@@ -27,11 +27,14 @@ public class PlatformSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnPlatform(Random.Range(_leftWall.transform.position.x, transform.position.x), Random.Range(transform.position.x, _rightWall.transform.position.x));
+        SpawnPlatform(Random.Range(_leftWall.transform.position.x, transform.position.x),
+            Random.Range(transform.position.x, _rightWall.transform.position.x),
+            Random.Range(transform.position.x, _rightWall.transform.position.x),
+            Random.Range(_leftWall.transform.position.x, transform.position.x));
         SpawnTrap();
     }
 
-    private void SpawnPlatform(float spawnPosX, float spawnPosX2)
+    private void SpawnPlatform(float spawnPosX, float spawnPosX2, float spawnPosX3, float spawnPosX4)
     {
 
         var d = Mathf.FloorToInt(transform.position.y/recondite);
@@ -40,10 +43,14 @@ public class PlatformSpawn : MonoBehaviour
             if (d > height)
             {
                 height = d;
-                Vector2 _spawnPos = new Vector2(spawnPosX, transform.position.y + Random.Range(7.5f, 10f));
-                Vector2 _spawnPos2 = new Vector2(spawnPosX2, transform.position.y + Random.Range(7.5f, 10f));
+                Vector2 _spawnPos = new Vector2(spawnPosX, transform.position.y + Random.Range(7.5f, 11f));
+                Vector2 _spawnPos2 = new Vector2(spawnPosX2, transform.position.y + Random.Range(7f, 10));
+                Vector2 _spawnPos3 = new Vector2(spawnPosX, transform.position.y + Random.Range(7.5f, 10f));
+                Vector2 _spawnPos4 = new Vector2(spawnPosX2, transform.position.y + Random.Range(7.5f, 10));
                 Instantiate(_platforms[Random.Range(0, _platforms.Length)], _spawnPos, Quaternion.identity);
                 Instantiate(_platforms[Random.Range(0, _platforms.Length)], _spawnPos2, Quaternion.identity);
+                Instantiate(_platforms[Random.Range(0, _platforms.Length)], _spawnPos3, Quaternion.identity);
+                Instantiate(_platforms[Random.Range(0, _platforms.Length)], _spawnPos4, Quaternion.identity);
             }
 
         }
