@@ -2,17 +2,19 @@
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float translation;
-    [SerializeField] private string _Joystick;
-    [SerializeField] float moveSpeed;
-    [SerializeField] KeyCode jump;
-    [SerializeField] KeyCode punch;
-
+    [SerializeField]
+    public float translation;
+    [SerializeField]
+    private string _joystick;
+    [SerializeField]
+    float moveSpeed;
+    [SerializeField]
+    private GameObject shield;
     private PlayerAttack _playerAttack;
     private PlayerJump _playerJump;
-
-    public bool stunned;
-
+    [SerializeField]
+    KeyCode jump, punch;
+    public bool stunned, shielded;
     Timer t;
 
     private void Start()
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!stunned)
         {
-            translation = Input.GetAxis(_Joystick) * moveSpeed;
+            translation = Input.GetAxis(_joystick) * moveSpeed;
             if (translation < 0)
             {
                 _playerAttack.ChangeHitbox("left");
@@ -46,11 +48,32 @@ public class PlayerController : MonoBehaviour
             if (t == null)
                 t = Timer.StartNew(gameObject, 1f, ChangeStun);
         }
+        if (shielded)
+        {
+            if (t == null)
+            {
+                shield = Instantiate(shield, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+                t = Timer.StartNew(gameObject, 5f, ChangeShielded);
+            }
+
+            shield.transform.position = transform.position;
+        }
     }
 
     private void ChangeStun()
     {
         stunned = !stunned;
         Destroy(t);
+    }
+    private void ChangeShielded()
+    {
+        shielded = !shielded;
+        Destroy(shield);
+        Destroy(t);
+    }
+    public void GetKnockback(Vector3 dir, float k)
+    {
+        if (!shielded)
+            gameObject.GetComponent<Rigidbody2D>().AddForce(dir * k, ForceMode2D.Impulse);
     }
 }
