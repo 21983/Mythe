@@ -57,7 +57,7 @@ public class Timer : MonoBehaviour
         if (Running && time > 0)
         {
             time -= Time.deltaTime;
-            Debug.Log(time);
+            //Debug.Log(time);
             if (time < 0)
             {
                 

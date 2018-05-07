@@ -22,7 +22,9 @@ public class BulletMovement : MonoBehaviour {
         //Debug.Log("Triggered");
         if (col.gameObject.tag == "Player")
         {
+            if(!col.GetComponent<PlayerController>().shielded)
             col.gameObject.GetComponent<Rigidbody2D>().AddForce(-transform.right * thrust, ForceMode2D.Impulse);
+
             Destroy(gameObject);
         }
     }

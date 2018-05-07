@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour {
     private bool isLeft;
 
     private bool isTriggered = false;
+    [SerializeField]
     private GameObject enemy;
 
     public void Attack(KeyCode punch)
@@ -23,7 +24,7 @@ public class PlayerAttack : MonoBehaviour {
         thrust = Mathf.Abs(2f-distance)*knockback;
         //Debug.Log("Distance: " + distance);
         //Debug.Log("Thrust: " + thrust);
-        if (Input.GetKeyDown(punch) && isTriggered)
+        if (Input.GetKeyDown(punch) && isTriggered && !enemy.GetComponent<PlayerController>().shielded)
         {
             if (isLeft)
             {

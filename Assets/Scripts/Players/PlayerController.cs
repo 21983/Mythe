@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!stunned)
         {
-            translation = Input.GetAxis(_joystick) * moveSpeed;
+            //translation = Input.GetAxis(_joystick) * moveSpeed;
+            translation = Input.GetAxis("Horizontal") * moveSpeed;
             if (translation < 0)
             {
                 _playerAttack.ChangeHitbox("left");
