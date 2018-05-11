@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class CharSelectInputs : MonoBehaviour {
 
@@ -9,13 +11,13 @@ public class CharSelectInputs : MonoBehaviour {
 
     private bool _joined = false;
 
-    [SerializeField] KeyCode LeftArrow;
-    [SerializeField] KeyCode RightArrow;
-    [SerializeField] KeyCode UpArrow;
-    [SerializeField] KeyCode DownArrow;
+    public KeyCode LeftArrow;
+    public KeyCode RightArrow;
+    public KeyCode UpArrow;
+    public KeyCode DownArrow;
 
-    [SerializeField] KeyCode Join;
-    [SerializeField] KeyCode Leave;
+    public KeyCode Join;
+    public KeyCode Leave;
 
 	// Use this for initialization
 	void Start () {

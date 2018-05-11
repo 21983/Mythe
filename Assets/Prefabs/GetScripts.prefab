@@ -51,4 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c7fc753c45acb48b562147086385bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlayers: 3
+  currentPlayers: 2

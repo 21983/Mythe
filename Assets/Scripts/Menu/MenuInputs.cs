@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuInputs : MonoBehaviour {
 
-    [SerializeField] KeyCode PauseButton;
-    [SerializeField] KeyCode UnpauseButton;
+    [SerializeField] KeyCode pauseButton;
+    [SerializeField] KeyCode reloadButton;
     public Pause pause;
 
     void Start()
@@ -34,17 +33,19 @@ public class MenuInputs : MonoBehaviour {
         }
 
         //Controller
-        if (Input.GetKeyDown(PauseButton) && !pause.isPaused)
+        //put here ur controller shit :3
+        if (Input.GetKeyDown(pauseButton) && !pause.isPaused)
         {
             pause.OnPause();
         }
-        else if (Input.GetKeyDown(PauseButton) && pause.isPaused)
+        else if (Input.GetKeyDown(pauseButton) && pause.isPaused)
         {
             pause.Resume();
         }
-        else if (Input.GetKeyDown(UnpauseButton) && pause.isPaused)
+        if (Input.GetKeyDown(reloadButton) && pause.isPaused)
         {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             pause.Resume();
         }
-	}
+    }
 }
